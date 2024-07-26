@@ -6,7 +6,7 @@ const port = 7865;
 app.use(express.json());
 
 app.get('/', (req, res) => {
-  res.send('Welcome to the payment system');
+  res.end('Welcome to the payment system');
 });
 
 app.get('/cart/:id([0-9]+)', (req, res) => {
@@ -23,8 +23,9 @@ app.get('/available_payments', (req, res) => {
   res.json(payments);
 });
 
-app.get('/login', (req, res) => {
-  res.end(`Welcome ${req.body.userName}`);
+app.post('/login', (req, res) => {
+  const username = req.body.userName;
+  res.end(`Welcome ${username}`);
 });
 
 app.listen(port, () => {
