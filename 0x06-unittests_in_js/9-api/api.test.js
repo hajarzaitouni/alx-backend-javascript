@@ -1,16 +1,17 @@
+// 9-api/api.test.js
 /*eslint-disable*/
 const request = require('request');
 const { expect } = require('chai');
 
 describe('Integration Testing', () => {
   describe('GET /', () => {
-    it('should return correct status code and result', (done) => {
+    it('Code: 200 | Body: Welcome to the payment system', (done) => {
       const options = {
         url: 'http://localhost:7865',
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(200);
         expect(body).to.equal('Welcome to the payment system');
         done();
@@ -25,7 +26,7 @@ describe('Integration Testing', () => {
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(200);
         expect(body).to.equal('Payment methods for cart 12');
         done();
@@ -40,7 +41,7 @@ describe('Integration Testing', () => {
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(200);
         expect(body).to.equal('Payment methods for cart 1');
         done();
@@ -55,7 +56,7 @@ describe('Integration Testing', () => {
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(200);
         expect(body).to.equal('Payment methods for cart 123');
         done();
@@ -70,7 +71,7 @@ describe('Integration Testing', () => {
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(404);
         done();
       });
@@ -84,7 +85,7 @@ describe('Integration Testing', () => {
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(404);
         done();
       });
@@ -98,7 +99,7 @@ describe('Integration Testing', () => {
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(404);
         done();
       });
@@ -112,7 +113,7 @@ describe('Integration Testing', () => {
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(404);
         done();
       });
@@ -126,7 +127,7 @@ describe('Integration Testing', () => {
         method: 'GET',
       };
 
-      request(options, (error, response, body) => {
+      request(options, function (error, response, body) {
         expect(response.statusCode).to.equal(404);
         done();
       });
