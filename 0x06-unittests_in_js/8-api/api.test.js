@@ -1,20 +1,14 @@
-const app = require('./api');
+// 8-api/api.test.js
+/*eslint-disable*/
 const { expect } = require('chai');
 const request = require('request');
 
-describe('index page', () => {
-  describe('GET /', () => {
-    it('should return the correct status and body ', (done) => {
-      const opt = {
-        url: 'http://localhost:7865',
-        method: 'GET',
-      };
-
-      request(opt, (error, response, body) => {
-        expect(response.statusCode).to.equal(200);
-        expect(body).to.equal('Welcome to the payment system');
-        done();
-      });
+describe('Index page', () => {
+  it('should return correct status code and result', (done) => {
+    request('http://localhost:7865', (error, response, body) => {
+      expect(response.statusCode).to.equal(200);
+      expect(body).to.equal('Welcome to the payment system');
+      done();
     });
   });
 });
