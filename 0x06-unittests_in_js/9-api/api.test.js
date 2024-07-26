@@ -1,3 +1,4 @@
+/*eslint-disable*/
 const request = require('request');
 const { expect } = require('chai');
 
